@@ -1,6 +1,6 @@
-# HookBox
+# RepReq
 
-HookBox is a lightweight webhook inspection, debugging, and mock response server built with Django and Django REST Framework.
+RepReq is a lightweight webhook inspection, debugging, and mock response server built with Django and Django REST Framework.
 
 It allows you to generate webhook endpoints, capture and inspect incoming HTTP requests, return custom mock responses, replay requests to target servers, and export logs.
 
@@ -21,7 +21,7 @@ cp .env.example .env
 Ensure `.env` contains your database connection string (used by both Django and Postgres containers):
 
 ```env
-DATABASE_URL=postgres://postgres:postgres@db:5432/hookbox
+DATABASE_URL=postgres://postgres:postgres@db:5432/RepReq
 ```
 
 ### 3. Start Containers
@@ -165,7 +165,7 @@ curl -X POST http://localhost:8001/api/request-logs/<request_id>/replay/ \
   -d '{"url": "https://webhook.site/my-test-url"}'
 ```
 
-HookBox preserves the original HTTP method, custom headers, query params, and body, and stores the response status and body in `replay_results`.
+RepReq preserves the original HTTP method, custom headers, query params, and body, and stores the response status and body in `replay_results`.
 
 ---
 
